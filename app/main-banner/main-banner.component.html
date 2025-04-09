@@ -1,0 +1,24 @@
+<header>
+  <div class="banner">
+    <div id="button">
+      <app-icon-button icon="menu" (click)="toggleSidebar()"></app-icon-button>
+    </div>
+    <div id="logo">
+      <a routerLink="/home">
+        <img src="/assets/img/logo_name.png" />
+      </a>
+    </div>
+    <div class="sidebar" [ngClass]="{'sidebar-open': isSidebarVisible}">
+      <div class="sidebar-content">
+        <app-banner-option></app-banner-option>
+      </div>
+    </div>
+    <div *ngIf="isSidebarVisible" class="overlay"></div>
+  </div>
+</header>
+
+
+
+
+
+

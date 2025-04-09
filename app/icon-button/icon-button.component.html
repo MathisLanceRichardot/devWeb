@@ -1,0 +1,39 @@
+<button class="icon-button">
+    <svg
+      [attr.width]="size"
+      [attr.height]="size"
+      [style.stroke]="color"
+      [style.fill]="color"
+      class="icon"
+    >
+      <use [attr.xlink:href]="'#icon-' + icon" />
+    </svg>
+    <svg style="display: none;">
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-home" viewBox="0 0 24 24">
+          <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-user" viewBox="0 0 24 24">
+          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zM4 20c0-2.8 4-4 8-4s8 1.2 8 4v1H4v-1z" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-settings" viewBox="0 0 24 24">
+          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor"/>
+          <path d="M19.4 15a7.8 7.8 0 0 0 0-6l2.1-1.6-1.5-2.6-2.4 1a7.8 7.8 0 0 0-6-3V0h-3v2.8a7.8 7.8 0 0 0-6 3l-2.4-1-1.5 2.6L4.6 9a7.8 7.8 0 0 0 0 6l-2.1 1.6 1.5 2.6 2.4-1a7.8 7.8 0 0 0 6 3V24h3v-2.8a7.8 7.8 0 0 0 6-3l2.4 1 1.5-2.6L19.4 15z" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-logout" viewBox="0 0 24 24">
+          <path d="M16 17l5-5-5-5M21 12H9M13 5V3a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7a1 1 0 0 0 1-1v-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-eye" viewBox="0 0 24 24">
+          <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        </symbol>
+        
+        <symbol id="icon-eye-off" viewBox="0 0 24 24">
+          <path d="M17.94 17.94C16.06 19.22 14.07 20 12 20c-7 0-11-8-11-8a20.8 20.8 0 0 1 5.07-5.94M9.88 9.88A3 3 0 0 1 14.12 14.12M1 1l22 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </symbol>
+        
+      </svg>      
+  </button>
+  

@@ -1,0 +1,9 @@
+p{
+    align-items: center;
+}
+
+@media screen and (max-width: 748px) {
+    p{
+        font-size: 50%;
+    }
+}

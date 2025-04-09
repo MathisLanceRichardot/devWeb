@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* #main prend toute la hauteur restante entre l'en-tête et le pied de page */
+.main {
+  min-height: calc(80vh); /* 80% de la hauteur de la fenêtre pour le contenu principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+@font-face {
+    font-family: 'Montserrat_regular';
+    src: url('font/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
