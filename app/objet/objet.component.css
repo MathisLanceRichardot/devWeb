@@ -1,0 +1,98 @@
+.produit-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Utiliser space-between pour espacer les cartes */
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produit-card-wrapper {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.produit-card {
+  max-width: 420px;
+  height: calc(50vh); /* Garde la hauteur de la carte adaptable à 50% de la hauteur de l'écran */
+  width: 100%; /* Garantie que la carte prend toute la largeur disponible */
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produit-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.produit-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.produit-card p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.produit-card strong {
+  color: #111;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .produit-container {
+    justify-content: center;  /* Centrer les cartes sur des petits écrans */
+  }
+
+  .produit-card-wrapper {
+    flex: 1 1 90%;  /* Permet aux cartes de prendre presque toute la largeur sur petits écrans */
+  }
+
+  .produit-card {
+    max-width: 100%;  /* La carte prend 100% de la largeur sur mobile */
+    height: auto; /* Ajuste la hauteur en fonction de la largeur sur mobile */
+  }
+
+  .image-wrapper {
+    margin-bottom: 1.5rem; /* Augmente l'espace sous l'image sur mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .produit-card-wrapper {
+    flex: 1 1 100%;  /* Les cartes prennent toute la largeur sur très petits écrans */
+  }
+
+  .produit-card {
+    max-width: 100%;  /* Assure que la carte est de pleine largeur */
+    height: auto; /* Ajuste la hauteur en fonction de la largeur */
+  }
+}
+
