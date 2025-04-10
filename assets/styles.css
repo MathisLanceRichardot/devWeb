@@ -1,0 +1,28 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Définir une police de base */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pour forcer le pied de page à aller en bas si nécessaire */
+}
+
+.main {
+  flex-grow: 1; /* Permet au contenu de prendre toute la hauteur restante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 80vh; /* Assure que le conteneur principal prend toujours au moins 100% de la hauteur de la page */
+}
+
+@font-face {
+    font-family: 'Montserrat_regular';
+    src: url('font/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
