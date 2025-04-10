@@ -1,0 +1,28 @@
+<div class="search-container">
+    <input 
+      type="text" 
+      placeholder="Rechercher..." 
+      [(ngModel)]="searchQuery">
+    
+    <button (click)="onSearchButtonClick()">Rechercher</button>
+    
+    <!-- Bouton pour afficher/masquer les filtres -->
+    <button (click)="toggleFilters()">
+      {{ filtersVisible ? 'Masquer les filtres' : 'Afficher les filtres' }}
+    </button>
+    
+    <!-- Conteneur des filtres -->
+    <div class="categories-container" *ngIf="filtersVisible">
+      <label *ngFor="let category of categories">
+        <input 
+          type="checkbox" 
+          [value]="category.Nom" 
+          (change)="onCategoryChange($event)" 
+          [checked]="selectedCategories.includes(category.Nom)" 
+        />
+        {{ category.Nom }}
+      </label>
+    </div>
+  </div>
+  
+  

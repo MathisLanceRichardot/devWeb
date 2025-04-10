@@ -1,0 +1,84 @@
+.produit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .produit-card {
+    width: 100%;
+    max-width: 420px;
+    min-width: 300px; /* Empêche les cartes de devenir trop petites */
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .produit-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 250px; /* Hauteur fixe pour uniformité */
+    overflow: hidden; /* Cache la partie de l'image qui dépasse */
+  }
+  
+  .produit-card img {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: 100%; /* Remplie toute la hauteur de l'image-wrapper */
+    object-fit: cover; /* Remplir sans déformer l'image */
+    object-position: center; /* Centrer l'image si elle est plus petite */
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .produit-card p {
+    color: #555;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .produit-card strong {
+    color: #111;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .produit-container {
+      justify-content: center;
+    }
+  
+    .produit-card-wrapper {
+      flex: 1 1 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .produit-card-wrapper {
+      flex: 1 1 100%;
+    }
+  }
+  
+  
+  

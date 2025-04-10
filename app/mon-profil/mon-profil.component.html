@@ -1,0 +1,62 @@
+
+    <app-main-banner></app-main-banner>
+<div id="main">
+    <h1>Profil de {{username}} </h1>
+
+    <form (submit)="onSubmit()" class="form-example" novalidate>
+        <h2>Informations Publiques</h2>
+        <div class="form-group">
+            <label for="usermail">Mail :</label>
+            {{usermail}}
+        </div>
+        <div class="form-group">
+            <label for="username">Pseudonyme : </label>
+            <input type="text" name="username" id="username" [(ngModel)]="username" required />
+        </div>
+        <div class="form-group">
+            <label for="userage">Date de naissance :</label>
+            <input type="date" name="userage" id="userage" [(ngModel)]="userdate_naissance" required />
+        </div>
+
+        <div class="form-group">
+            <label for="usersexe">Sexe :</label>
+            <select name="usersexe" id="usersexe" [(ngModel)]="usersexe" required>
+                <option value="">-- Sélectionnez un genre --</option>
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+                <option value="autre">Autre</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="usercategorie">Type de membre :</label>
+            <select name="usercategorie" id="usercategorie" [(ngModel)]="usercategorie" required>
+                <option value="">-- Sélectionnez un type --</option>
+                <option value="enfant">Enfant</option>
+                <option value="parent">Parent</option>
+                <option value="grand-parent">Grand-Parent</option>
+                <option value="invite">Invité</option>
+            </select>
+        </div>
+
+        <h3>Informations Privées</h3>
+        <div class="form-group">
+            <label for="userNom">Nom :</label>
+            <input type="text" name="userNom" id="userNom" [(ngModel)]="userNom" required />
+        </div>
+
+        <div class="form-group">
+            <label for="userPrenom">Prénom :</label>
+            <input type="text" name="userPrenom" id="userPrenom" [(ngModel)]="userPrenom" required />
+        </div>
+
+        <div class="form-group">
+            <label for="userpassword">Mot de passe :</label>
+            <input type="password" name="userpassword" id="userpassword" [(ngModel)]="userpassword" required />
+        </div>
+        {{erreur}}<br>
+        <button type="submit" id="submit-btn" class="submit-btn">Mettre à jour</button>
+        <button type="button" id="delete-btn" class="delete-btn" (click)="onDeleteAccount()">Supprimer le compte</button>
+    </form>
+</div>
+    <app-pied-de-page></app-pied-de-page>

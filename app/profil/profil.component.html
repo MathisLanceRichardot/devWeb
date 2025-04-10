@@ -1,0 +1,25 @@
+<app-main-banner></app-main-banner>
+<div class="profile-container" *ngIf="userData">
+  <figure>
+    <!-- Affichage de l'image de profil avec une image par défaut si non définie -->
+    <img [src]="(userData.photoURL || '../assets/img/avatars/avatar_default.png')" alt="Avatar" (click)="toggleEditPhoto()" />
+    <figcaption>{{ userData.name }}</figcaption>
+  </figure>
+
+  <app-modif-photo *ngIf="isEditingPhoto" [userData]="userData" (photoUpdated)="updatePhoto($event)"></app-modif-photo>
+
+  <div class="profile-details">
+    <div><strong>Email:</strong> {{ userData.mail }}</div>
+    <div><strong>Date de naissance:</strong> {{ userData.date_de_naissance }}</div>
+    <div><strong>Sexe:</strong> {{ userData.sexe }}</div>
+    <div><strong>Catégorie:</strong> {{ userData.categorie }}</div>
+    <div><strong>Niveau:</strong> {{ userData.level }}</div>
+    <div><strong>Points:</strong> {{ userData.points }}</div>
+    <div><strong>État:</strong> {{ userData.etat }}</div>
+  </div>
+
+  <button (click)="editProfil()">Modifier le profil</button>
+  <button (click)="deleteUser()">Supprimer profil</button>
+  <button (click)="increaseLevel()">Augmenter le niveau</button>
+</div>
+<app-pied-de-page></app-pied-de-page>
