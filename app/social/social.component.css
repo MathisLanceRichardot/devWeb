@@ -1,0 +1,20 @@
+/* Conteneur de la barre de recherche */
+.espacement-barre-recherche {
+    margin-bottom: 20px; /* Espacement sous la barre de recherche */
+    display: flex;
+    justify-content: center; /* Centre la barre de recherche horizontalement */
+    width: 100%; /* S'assure que la barre de recherche occupe toute la largeur disponible */
+  }
+  
+  /* Conteneur des cartes de profils */
+  .produit-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de se répartir sur plusieurs lignes si besoin */
+    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 20px; /* Espacement entre les cartes */
+    padding: 20px 0; /* Padding pour espacer les cartes du haut et du bas */
+  }
+  
+
+
+  

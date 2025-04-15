@@ -1,0 +1,15 @@
+<app-main-banner></app-main-banner>
+
+<div id="main">
+  <div class="espacement-barre-recherche">
+    <app-barre-recherche (searchEvent)="onSearchUser($event)"></app-barre-recherche>
+  </div>
+
+  <div class="produit-cards-container">
+    <div *ngFor="let user of users" class="produit-card-wrapper">
+      <app-profil [UserId]="user.id"></app-profil>
+    </div>
+  </div>
+</div>
+
+<app-pied-de-page></app-pied-de-page>

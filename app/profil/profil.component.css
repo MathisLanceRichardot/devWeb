@@ -1,0 +1,203 @@
+/* Container général du profil */
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Partie gauche : photo + pseudo + boutons */
+.left {
+  flex: 1;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f9fc;
+  gap: 1.5rem;
+}
+
+/* Pseudo au-dessus de la photo */
+#pseudo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #4a90e2;
+  padding: 0.7rem 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Photo de profil */
+.picture-profil img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #ddd;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.picture-profil img:hover {
+  transform: scale(1.05);
+  border-color: #4a90e2;
+}
+
+/* Boutons */
+.profil-button {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style des boutons */
+.profil-button button {
+  padding: 0.8rem 1.2rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 80%;
+}
+
+.profil-button button:hover {
+  background-color: #357ab8;
+}
+
+.profil-button button:active {
+  transform: scale(0.98);
+}
+
+.profil-button button:last-child {
+  background-color: #e74c3c;
+  width: 80%;
+}
+
+.profil-button button:last-child:hover {
+  background-color: #c0392b;
+}
+
+.profil-button button:last-child:active {
+  transform: scale(0.98);
+}
+
+/* Partie droite : détails */
+.profile-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f9fc;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 1rem 2rem;
+  border-left: 2px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.profile-details div {
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+  transition: background-color 0.3s;
+}
+
+.profile-details div:hover {
+  background-color: #e6f1ff;
+}
+
+.details-private {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 1rem 1.5rem;
+  background-color: #f7f9fc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.details-private div {
+  padding: 0.8rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.details-private div:hover {
+  background-color: #e6f1ff;
+}
+
+/* Responsive : Adaptation pour les écrans plus petits */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column; /* Passe à une colonne sur mobile */
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .left {
+    max-width: 100%; /* Ajuste la taille de la partie gauche sur mobile */
+    align-items: center;
+  }
+
+  .profile-details {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .profile-details div {
+    text-align: center; /* Centre le contenu des détails */
+    padding: 1rem;
+    width: 90%; /* Ajuste la largeur pour mobile */
+  }
+
+  .profil-button button {
+    width: 80%; /* Ajuste la largeur des boutons sur mobile */
+  }
+
+  #pseudo {
+    font-size: 1.2rem; /* Ajuste la taille du pseudo sur mobile */
+  }
+
+  .picture-profil img {
+    width: 130px; /* Réduit la taille de la photo de profil sur mobile */
+    height: 130px;
+  }
+
+  .profile-details {
+    width: 90%; /* Réduit la largeur des détails sur mobile */
+    padding: 1rem;
+  }
+
+  .details-private {
+    width: 100%; /* Les détails privés prennent toute la largeur */
+    padding: 1rem;
+  }
+}
+
+

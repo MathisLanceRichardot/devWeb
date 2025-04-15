@@ -1,0 +1,100 @@
+<div class="profile-container" *ngIf="userData">
+  <div class="left">
+    <!-- Pseudo -->
+    <div id="pseudo">
+      <strong *ngIf="!isEditingProfil">{{ userData.name }}</strong>
+      <input *ngIf="isEditingProfil" [(ngModel)]="editableUser.name" />
+    </div>
+
+    <!-- Photo -->
+    <div class="picture-profil">
+      <figure>
+        <img [src]="(userData.photoURL || '../assets/img/avatars/avatar_default.png')" alt="Avatar" (click)="toggleEditPhoto()" />
+      </figure>
+    </div>
+    <app-modif-photo
+      *ngIf="!isSocialMode && isEditingPhoto"
+      [userData]="userData"
+      (photoUpdated)="updatePhoto($event)">
+    </app-modif-photo>
+
+    <!-- Détails privés -->
+    <div class="details-private" *ngIf="!isSocialMode">
+      <div><strong>Email:</strong> {{ userData.mail }}</div>
+
+      <div>
+        <strong>Nom:</strong>
+        <span *ngIf="!isEditingProfil">{{ userData.nom }}</span>
+        <input *ngIf="isEditingProfil" [(ngModel)]="editableUser.nom" />
+      </div>
+
+      <div>
+        <strong>Prénom:</strong>
+        <span *ngIf="!isEditingProfil">{{ userData.prenom }}</span>
+        <input *ngIf="isEditingProfil" [(ngModel)]="editableUser.prenom" />
+      </div>
+
+      <div>
+        <strong>Mot de passe:</strong>
+        <span *ngIf="!isEditingProfil">{{ userData.password }}</span>
+        <input *ngIf="isEditingProfil" type="password" [(ngModel)]="editableUser.password" />
+      </div>
+    </div>
+
+    <!-- Boutons -->
+    <div class="profil-button" *ngIf="!isSocialMode">
+      <ng-container *ngIf="!isEditingProfil">
+        <button (click)="editProfil()">Modifier le profil</button>
+        <button (click)="increaseLevel()">Augmenter le niveau</button>
+        <button (click)="deleteUser()">Supprimer profil</button>
+      </ng-container>
+
+      <ng-container *ngIf="isEditingProfil">
+        <button (click)="saveProfil()">Valider</button>
+        <button (click)="cancelEdit()">Annuler</button>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Infos générales -->
+  <div class="profile-details">
+    <div>
+      <strong>Date de naissance:</strong>
+      <span *ngIf="!isEditingProfil">{{ userData.date_de_naissance }}</span>
+      <input *ngIf="isEditingProfil" type="date" [(ngModel)]="editableUser.date_de_naissance" />
+    </div>
+
+    <div>
+      <strong>Sexe:</strong>
+      <span *ngIf="!isEditingProfil">{{ userData.sexe }}</span>
+      <select *ngIf="isEditingProfil" [(ngModel)]="editableUser.sexe">
+        <option value="Homme">Homme</option>
+        <option value="Femme">Femme</option>
+        <option value="Autre">Autre</option>
+      </select>
+    </div>
+
+    <div>
+      <strong>Catégorie:</strong>
+      <span *ngIf="!isEditingProfil">{{ userData.categorie }}</span>
+      <select *ngIf="isEditingProfil" [(ngModel)]="editableUser.categorie">
+        <option value="enfant">Enfant</option>
+        <option value="parent">Parent</option>
+        <option value="grand-parent">Grand-Parent</option>
+        <option value="invite">Invite</option>
+      </select>
+    </div>
+
+    <div>
+      <strong>Niveau:</strong>
+      {{ userData.level }}
+    </div>
+
+    <div>
+      <strong>Points:</strong>
+      {{ userData.points }}
+    </div>
+  </div>
+</div>
+
+

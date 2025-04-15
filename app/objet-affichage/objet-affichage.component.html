@@ -1,0 +1,50 @@
+<div class="objet-container">
+    <h3>{{ objet.type }} - {{ objet.categorie }}</h3>
+  
+    <div *ngIf="hasAttribute('connectivite')" class="has-attribute">
+      <p><strong class="attribute-title">Connectivité :</strong> {{ objet.connectivite }}</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('connexion')" class="has-attribute">
+      <p><strong class="attribute-title">Connexion :</strong> {{ objet.connexion }}</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('etat')" class="has-attribute">
+      <p><strong class="attribute-title">État :</strong> {{ objet.etat }}</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('consommation')" class="has-attribute">
+      <p><strong class="attribute-title">Consommation :</strong> {{ objet.consommation }}</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('maxluminosite')" class="has-attribute">
+      <p><strong class="attribute-title">Max Luminosité :</strong> {{ objet.maxluminosite }}%</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('taille')" class="has-attribute">
+      <p><strong class="attribute-title">Taille :</strong> {{ objet.taille }} pouces</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('volume')" class="has-attribute">
+      <p><strong class="attribute-title">Volume :</strong> {{ objet.volume }}W</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('temperature')" class="has-attribute">
+      <p><strong class="attribute-title">Température :</strong> {{ objet.temperature }}°C</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('mode')" class="has-attribute">
+      <p><strong class="attribute-title">Mode :</strong> {{ objet.mode }}</p>
+    </div>
+  
+    <div *ngIf="hasAttribute('debit')" class="has-attribute">
+      <p><strong class="attribute-title">Débit :</strong> {{ objet.debit }} Mbps</p>
+    </div>
+    <div *ngIf="canEdit">
+        <button (click)="toggleEdit()">
+          {{ editMode ? 'Annuler' : 'Modifier' }}
+        </button>
+        <button *ngIf="editMode" (click)="saveChanges()">Enregistrer</button>
+      </div>
+  </div>
+  

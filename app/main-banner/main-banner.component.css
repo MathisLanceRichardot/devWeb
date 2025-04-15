@@ -1,0 +1,160 @@
+/* Styles globaux */
+* {
+    box-sizing: border-box;
+}
+
+.sidebar{
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 100vw;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+    gap: 0; /* Pas d’espace entre les enfants */
+}
+
+/* Logo */
+#logo {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin-right: 0; /* Rien ici */
+}
+
+#logo img {
+    width: 100%; /* Taille fixe ou ajustable */
+    height: auto;
+    display: block; /* Important pour coller au suivant */
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+/* Bouton menu caché par défaut (PC) */
+#button {
+    display: none;
+    cursor: pointer;
+}
+
+/* Comportement par défaut (PC) */
+.option-pc {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 0; /* Collé au logo */
+}
+
+.option-mobil {
+    display: none;
+}
+
+/* Liens */
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+#button:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Fond sombre pour overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 998; /* Assurez-vous qu'il est derrière la sidebar mais devant le reste du contenu */
+    display: none; /* Par défaut, l'overlay est masqué */
+}
+
+/* Quand la sidebar est ouverte, affiche l'overlay */
+.sidebar-open + .overlay {
+    display: block;
+}
+
+/* ✅ Styles pour mobile */
+@media screen and (max-width: 748px) {
+    .banner {
+        gap: 10px;
+    }
+
+    #button {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        margin-left: 10px;
+    }
+
+    #logo {
+        width: 100%;
+    }
+
+    #logo img {
+        width: 50%; /* Adapté au mobile */
+    }
+
+    .option-pc {
+        display: none;
+    }
+
+    .option-mobil {
+        display: none;
+    }
+
+    /* Styles de la sidebar mobile */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Masquer la sidebar en dehors de l'écran */
+        width: 250px;
+        height: 100%; /* Full height */
+        background-color: white;
+        color: white;
+        transition: left 0.3s ease; /* Animation pour faire glisser la sidebar */
+        z-index: 999; /* S'assurer que la sidebar est au-dessus des autres éléments */
+        padding-top: 60px; /* Pour que le contenu de la sidebar commence sous le bouton */
+        display: flex;
+        flex-direction: column; /* Empêche que le contenu se replie */
+    }
+
+    .sidebar-open {
+        left: 0; /* Lorsque l'état est 'ouvert', la sidebar glisse depuis le côté */
+    }
+
+    /* Conteneur des options dans la sidebar */
+    .sidebar-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Espacement entre les options */
+        flex-grow: 1; /* Prend tout l'espace restant */
+        justify-content: space-between; /* Espacement vertical */
+    }
+
+    .sidebar-content a {
+        color: #333; /* Pour une meilleure visibilité sur fond blanc */
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar-content a:hover {
+        background-color: #555;
+        color: white;
+    }
+}
+

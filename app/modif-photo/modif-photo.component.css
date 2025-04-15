@@ -1,0 +1,63 @@
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;  /* Les éléments se mettront sur plusieurs lignes en cas de besoin */
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .photo-grid img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Effet de survol */
+  .photo-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Image sélectionnée */
+  .photo-grid img.selected {
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+  }
+  
+  /* Image affichée en grand après sélection */
+  .selected-image {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  div h3{
+    text-align: center;
+  }
+  
+  /* Responsive Design pour les petits écrans */
+  @media (max-width: 768px) {
+    .photo-grid {
+      gap: 8px;  /* Réduire l'espace entre les images */
+    }
+  
+    .photo-grid img {
+      width: 60px;  /* Réduire la taille des images */
+      height: 60px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .photo-grid img {
+      width: 50px;  /* Réduire encore plus la taille des images sur les très petits écrans */
+      height: 50px;
+    }
+  
+    .selected-image {
+      width: 120px;  /* Ajuster la taille de l'image sélectionnée sur mobile */
+      height: 120px;
+    }
+  }
+  

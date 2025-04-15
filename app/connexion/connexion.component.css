@@ -1,0 +1,148 @@
+/* Conteneur principal de la connexion */
+.connexion-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 5vh auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connexion-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.connexion-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Champ de saisie et étiquette */
+.connexion-form label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.connexion-form input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connexion-form input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Conteneur pour le champ de mot de passe */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+}
+
+/* Message d'erreur */
+.incorrect-connexion {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bouton de connexion */
+.connexion-button {
+  padding: 0.75rem;
+  background-color: #007BFF;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+}
+
+.connexion-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.connexion-button:focus {
+  outline: none;
+}
+
+/* Lien vers l'inscription */
+a {
+  text-align: center;
+  color: #007BFF;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .connexion-container {
+    padding: 1.5rem;
+  }
+
+  .connexion-title {
+    font-size: 1.5rem;
+  }
+
+  .connexion-form input,
+  .connexion-button {
+    font-size: 0.95rem;
+  }
+}

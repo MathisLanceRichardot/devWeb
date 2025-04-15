@@ -1,0 +1,9 @@
+<div class="create-piece">
+    <h2>Crée une piece</h2>
+    <select [(ngModel)]="typePiece">
+        <option value="">Sélectionner un type de pièce</option>
+        <option *ngFor="let type of typesPieces" [value]="type">{{ type }}</option>
+      </select>
+      
+      <button (click)="ajouterPiece()">Créer</button>
+</div>
