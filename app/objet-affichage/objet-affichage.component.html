@@ -1,0 +1,144 @@
+<div class="objet-container">
+    <h3>{{ objet.type }} - {{ objet.categorie }}</h3>
+  
+    <div *ngIf="hasAttribute('connectivite')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Connectivité :</strong>
+        <span *ngIf="!editMode">{{ objet.connectivite }}</span>
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('connexion')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Connexion :</strong>
+        <span *ngIf="!editMode">{{ objet.connexion }}</span>
+        <select
+          *ngIf="editMode"
+          [(ngModel)]="objet.connexion"
+          [disabled]="objet.etat === 'Éteint'"
+        >
+          <option value="Connecté">Connecté</option>
+          <option value="Déconnecté">Déconnecté</option>
+        </select>
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('etat')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">État :</strong>
+        <span *ngIf="!editMode">{{ objet.etat }}</span>
+        <select *ngIf="editMode" [(ngModel)]="objet.etat" (change)="onEtatChange()">
+          <option value="Éteint">Éteint</option>
+          <option value="Allumé">Allumé</option>
+        </select>
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('consommation')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Consommation :</strong>
+        <span *ngIf="!editMode">{{ objet.consommation }}W</span>
+        <input
+          *ngIf="editMode"
+          type="number"
+          [(ngModel)]="objet.consommation"
+          min="1"
+          max="5000"
+        />
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('maxluminosite')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Max Luminosité :</strong>
+        <span *ngIf="!editMode">{{ objet.maxluminosite }}%</span>
+        <input
+          *ngIf="editMode"
+          type="number"
+          [(ngModel)]="objet.maxluminosite"
+          min="0"
+          max="100"
+        />
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('taille')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Taille :</strong>
+        <span *ngIf="!editMode">{{ objet.taille }} pouces</span>
+        <input
+          *ngIf="editMode"
+          type="number"
+          [(ngModel)]="objet.taille"
+          min="1"
+          max="100"
+        />
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('volume')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Volume :</strong>
+        <span *ngIf="!editMode">{{ objet.volume }} W</span>
+        <input
+          *ngIf="editMode"
+          type="number"
+          [(ngModel)]="objet.volume"
+          min="1"
+          max="2000"
+        />
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('temperature')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Température :</strong>
+        <span *ngIf="!editMode">{{ objet.temperature }} °C</span>
+        <input
+          *ngIf="editMode"
+          type="number"
+          [(ngModel)]="objet.temperature"
+          min="10"
+          max="40"
+        />
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('mode')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Mode :</strong>
+        <span *ngIf="!editMode">{{ objet.mode }}</span>
+        <ng-container *ngIf="editMode">
+          <select [(ngModel)]="objet.mode">
+            <option value="Froid">Froid</option>
+            <option value="Chaud">Chaud</option>
+            <option value="Automatique">Automatique</option>
+            <option value="Ventilation">Ventilation</option>
+          </select>
+        </ng-container>
+      </p>
+    </div>
+  
+    <div *ngIf="hasAttribute('debit')" class="has-attribute">
+      <p>
+        <strong class="attribute-title">Débit :</strong>
+        <span *ngIf="!editMode">{{ objet.debit }} Mbps</span>
+        <input
+          *ngIf="editMode"
+          type="number"
+          [(ngModel)]="objet.debit"
+          min="1"
+          max="1000"
+        />
+      </p>
+    </div>
+  
+    <!-- Boutons d'action -->
+    <div *ngIf="canEdit">
+      <button (click)="toggleEdit()">{{ editMode ? 'Annuler' : 'Modifier' }}</button>
+      <button *ngIf="editMode" (click)="saveChanges()">Enregistrer</button>
+    </div>
+  </div>
+  
+  
+  
