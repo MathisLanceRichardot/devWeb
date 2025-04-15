@@ -1,0 +1,25 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif; /* Définir une police de base */
+}
+
+#main {
+  flex-grow: 1;
+  display: flex; /* Ajoute cette propriété pour utiliser Flexbox */
+  flex-direction: column; /* Les éléments dans #main seront alignés verticalement */
+  align-items: center; /* Centre le contenu horizontalement */
+  justify-content: center; /* Centre le contenu verticalement */
+  padding: 20px;
+  min-height:85vh; /* Assure que le conteneur principal prend au moins 80% de la hauteur de la page */
+  width: 100%; /* Assure que #main occupe toute la largeur disponible */
+}
+
+@font-face {
+    font-family: 'Montserrat_regular';
+    src: url('font/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
